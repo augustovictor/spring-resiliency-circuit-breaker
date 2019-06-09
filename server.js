@@ -13,7 +13,7 @@ const moviesList = [
 
 http.createServer((req, res) => {
     console.log(req.url);
-    if(req.url === '/v1/imdb/movies') {
+    if(req.url === '/imdb/v1/movies') {
         res.writeHead(200, defaultContentType);
         res.write(JSON.stringify(moviesList));
         res.end();

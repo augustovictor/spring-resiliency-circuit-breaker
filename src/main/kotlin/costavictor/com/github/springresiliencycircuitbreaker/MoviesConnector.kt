@@ -15,12 +15,12 @@ const val BACKEND = "moviesExternalService"
 @Bulkhead(name = BACKEND)
 @Retry(name = BACKEND, fallbackMethod = "moviesFallback")
 @Component
-class MoviesConnector {
+class MoviesConnector(private val imdbClient: ImdbClient) {
 
     private val logger = LogFactory.getLog(javaClass)
 
     fun fetchMovies(): List<Movie> {
-        return listOf(Movie(1, "Movie 1", 3.0))
+        return imdbClient.fetchMovies()
     }
 
     fun moviesFallback(ex: Exception): List<Movie> {
