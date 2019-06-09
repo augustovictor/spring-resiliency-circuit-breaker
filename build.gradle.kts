@@ -16,6 +16,9 @@ repositories {
 }
 
 dependencies {
+	compile("org.springframework.boot:spring-boot-starter-actuator:2.1.5.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-aop:2.1.5.RELEASE")
+	compile("io.github.resilience4j:resilience4j-spring-boot2:0.15.0")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
